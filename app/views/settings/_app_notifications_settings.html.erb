@@ -1,6 +1,8 @@
 <table>
   <tbody>
+  <tr>
     <th><%= l(:notifications_events_settings) %></th>
+  </tr>
     <% ["issue_added", "issue_updated", "issue_note_added", "issue_status_updated", "issue_assigned_to_updated", "issue_priority_updated"].each do |str| %>
       <tr>
         <td>
@@ -14,9 +16,17 @@
 
 <table>
   <tbody>
+  <tr>
+    <th><%= l(:faye_script_adress) %></th>
+    <td>
+      <input type="text" id="faye_script_adress" value="<%= settings['faye_script_adress'] %>" name="settings[faye_script_adress]" >
+    </td>
+  </tr>
+  <tr>
     <th><%= l(:faye_server_adress) %></th>
-      <td>
-        <input type="text" id="faye_server_adress" value="<%= settings['faye_server_adress'] %>" name="settings[faye_server_adress]" >
-      </td>
+    <td>
+      <input type="text" id="faye_server_adress" value="<%= settings['faye_server_adress'] %>" name="settings[faye_server_adress]">
+    </td>
+  </tr>
   </tbody>
 </table>

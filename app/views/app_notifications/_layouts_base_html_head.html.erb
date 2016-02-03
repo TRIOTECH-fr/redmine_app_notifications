@@ -2,7 +2,7 @@
 	<%= javascript_include_tag "app_notifications", :plugin => "redmine_app_notifications" %>
     <%= stylesheet_link_tag "app_notifications", :plugin => "redmine_app_notifications" %>
     <% unless Setting.plugin_redmine_app_notifications['faye_server_adress'].empty? %>
-    	<%= javascript_include_tag "#{Setting.plugin_redmine_app_notifications['faye_server_adress']}/faye.js" %>
+    	<%= javascript_include_tag "#{Setting.plugin_redmine_app_notifications['faye_script_adress'] || (Setting.plugin_redmine_app_notifications['faye_server_adress'] + "/faye.js")}" %>
 	    <script>
 			function getIssueIdFromMessage(message)
 			{
