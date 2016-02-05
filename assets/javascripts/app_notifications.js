@@ -38,5 +38,5 @@ $(document).ready(function () {
         return false;
     });
 
-    $("#notification_count").wrap("<span id='notification_count'></span>");
+    $("#notification_count").wrap("<span id='notification_count_wrapper'></span>");
 });
