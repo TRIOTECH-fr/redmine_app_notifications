@@ -28,7 +28,8 @@ Redmine::Plugin.register :redmine_app_notifications do
       'issue_assigned_to_updated' => 'on',
       'issue_priority_updated' => 'on',
       'faye_script_adress' => 'http://ip_address_or_name_of_your_server:9292/faye/faye.js',
-      'faye_server_adress' => 'http://ip_address_or_name_of_your_server:9292/faye'
+      'faye_server_adress' => 'http://ip_address_or_name_of_your_server:9292/faye',
+      'faye_local_server_adress' => 'http://127.0.0.1:9292/faye'
     }, :partial => 'settings/app_notifications_settings'
 end
 
