@@ -10,7 +10,7 @@ class AppNotification < ActiveRecord::Base
 	def deliver
 		unless Setting.plugin_redmine_app_notifications['faye_server_adress'].empty?
 			channel = "/notifications/private/#{recipient.id}"
-			message = {:channel => channel, :data => { count: AppNotification.where(recipient_id: recipient.id, viewed: false).count, message: message_text, id: id, avatar: gravatar_url(author.mail, { :default => Setting.gravatar_default })}}
+			message = {:channel => channel, :data => { count: AppNotification.where(recipient_id: recipient.id, viewed: false).count, message: message_text, id: id, avatar: gravatar_url(author.mail || '', { :default => Setting.gravatar_default })}}
 			uri = URI.parse(Setting.plugin_redmine_app_notifications['faye_local_server_adress'] || Setting.plugin_redmine_app_notifications['faye_server_adress'])
 			Net::HTTP.post_form(uri, :message => message.to_json)
 		end
